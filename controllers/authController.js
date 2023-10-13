@@ -1,5 +1,5 @@
-import Users from "../models/userModel";
-import { comparePassword, createJWT, hashString } from "../utils";
+import Users from "../models/userModel.js";
+import { comparePassword, createJWT, hashString } from "../utils/index.js";
 
 export const register = async (req, res, next) => {
     const { firstName, lastName, email, password } = req.body;
@@ -11,7 +11,6 @@ export const register = async (req, res, next) => {
     }
 
     try {
-
         //CHEKCING WEATHER EMAIL ID ALREADY REGSITERED OR NOT
         const userExist = await Users.findOne({ email });
 
