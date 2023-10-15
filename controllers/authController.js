@@ -4,12 +4,18 @@ import { sendVerificationEmail } from "../utils/sendEmail.js";
 
 export const register = async (req, res, next) => {
   const { firstName, lastName, email, password } = req.body;
+  
+  console.log(req.body);
 
-  //validate fileds
-//   if (!(firstName || lastName || email || password)) {
-//     next("Provide Required Fields!");
-//     return;
-//   }
+//  validate fileds
+  if (!(firstName || lastName || email || password)) {
+    console.log(firstName);
+    console.log(lastName );
+    console.log(email )
+    console.log(password);
+    next("Provide Required Fields!");
+    return;
+  }
 
   try {
     const userExist = await Users.findOne({ email });

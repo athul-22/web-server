@@ -51,7 +51,8 @@ export const sendVerificationEmail = async (user, res) => {
   };
 
   try {
-    const hashedToken = await hashString(token);
+const hashedToken = await hashString(token);
+
 
     const newVerifiedEmail = await Verification.create({
       userId: _id,
