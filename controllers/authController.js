@@ -68,6 +68,7 @@ export const login = async (req, res, next) => {
     }
 
     // compare password
+   
     const isMatch = await compareString(password, user?.password);
 
     if (!isMatch) {
@@ -83,7 +84,7 @@ export const login = async (req, res, next) => {
       success: true,
       message: "Login successfully",
       user,
-      token,
+    
     });
   } catch (error) {
     console.log(error);

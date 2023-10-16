@@ -2,7 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import morgan from "morgan";
-// import bodyParser from "body-parser";
+import bodyParser from "body-parser";
 import path from "path";
 
 //securty packges
