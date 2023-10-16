@@ -2,7 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import morgan from "morgan";
-import bodyParser from "body-parser";
+// import bodyParser from "body-parser";
 import path from "path";
 
 //securty packges
@@ -25,14 +25,14 @@ dbConnection();
 
 app.use(helmet());
 app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended : true}));
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({extended : true}));
 app.use(express.json());
 app.use(express.json({ limit: "10mb" })); // Request body parsing middleware
 app.use(express.urlencoded({ extended: true })); // Request body parsing middleware
 app.use(router); // Route handling middleware
+// app.use(express.json({limit: "10mb"}));
 app.use(morgan("dev"));
-
 //error middleware
 app.use(errorMiddleware)
 
