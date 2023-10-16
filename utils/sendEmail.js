@@ -72,12 +72,12 @@ export const sendVerificationEmail = async (user, res) => {
         })
         .catch((err) => {
           console.log(err);
-          res.status(404).json({ message: "Something went wrong" });
+          res.status(404).json({ message: "Something went wrong 1" });
         });
     }
   } catch (error) {
     console.log(error);
-    res.status(404).json({ message: "Something went wrong" });
+    res.status(404).json({ message: "Something went wrong 2" });
   }
 };
 
@@ -123,11 +123,11 @@ export const resetPasswordLink = async (user, res) => {
         })
         .catch((err) => {
           console.log(err);
-          res.status(404).json({ message: "Something went wrong" });
+          res.status(404).json({ message: "Something went wrong 3" });
         });
     }
   } catch (error) {
     console.log(error);
-    res.status(404).json({ message: "Something went wrong" });
+    res.status(404).json({ message: "Something went wrong 4" });
   }
 };
