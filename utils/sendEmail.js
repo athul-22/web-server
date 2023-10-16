@@ -2,8 +2,8 @@ import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 import { v4 as uuidv4 } from "uuid";
 import { hashString } from "./index.js";
-import Verification from "../models/emailVerification.js";
-import PasswordReset from "../models/PasswordReset.js";
+import Verification from '../models/emailVerification.js'
+import PasswordReset from '../models/passwordReset.js'
 
 dotenv.config();
 
@@ -51,8 +51,7 @@ export const sendVerificationEmail = async (user, res) => {
   };
 
   try {
-const hashedToken = await hashString(token);
-
+    const hashedToken = await hashString(token);
 
     const newVerifiedEmail = await Verification.create({
       userId: _id,
@@ -73,12 +72,12 @@ const hashedToken = await hashString(token);
         })
         .catch((err) => {
           console.log(err);
-          res.status(404).json({ message: "Something went wrong" });
+          res.status(404).json({ message: "Something went wrong 1" });
         });
     }
   } catch (error) {
     console.log(error);
-    res.status(404).json({ message: "Something went wrong" });
+    res.status(404).json({ message: "Something went wrong 2" });
   }
 };
 
@@ -124,11 +123,11 @@ export const resetPasswordLink = async (user, res) => {
         })
         .catch((err) => {
           console.log(err);
-          res.status(404).json({ message: "Something went wrong" });
+          res.status(404).json({ message: "Something went wrong 3" });
         });
     }
   } catch (error) {
     console.log(error);
-    res.status(404).json({ message: "Something went wrong" });
+    res.status(404).json({ message: "Something went wrong 4" });
   }
 };
