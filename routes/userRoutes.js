@@ -42,7 +42,7 @@ router.post("/profile-view", userAuth, profileViews);
 router.post("/suggested-friends", userAuth, suggestedFriends);
 
 router.get("/verified", (req, res) => {
-  res.sendFile(path.join(__dirname, "./views/verifiedPage.html"));
+  res.sendFile(path.join(__dirname, "./views/build", "index.html"));
 });
 
 router.get("/resetpassword", (req, res) => {
