@@ -60,12 +60,12 @@ export const login = async (req, res, next) => {
       return;
     }
 
-    if (!user?.verified) {
-      next(
-        "User email is not verified. Check your email account and verify your email"
-      );
-      return;
-    }
+    // if (!user?.verified) {
+    //   next(
+    //     "User email is not verified. Check your email account and verify your email"
+    //   );
+    //   return;
+    // }
 
     // compare password
    
@@ -80,11 +80,13 @@ export const login = async (req, res, next) => {
 
     const token = createJWT(user._id);
 
+    console.log(token);
+
     res.status(201).json({
       success: true,
       message: "Login successfully",
       user,
-    
+      token
     });
   } catch (error) {
     console.log(error);

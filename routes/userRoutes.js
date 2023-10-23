@@ -45,6 +45,10 @@ router.get("/verified", (req, res) => {
   res.sendFile(path.join(__dirname, "./views/build", "index.html"));
 });
 
+router.get("/users/verify/", (req, res) => {
+  res.sendFile(path.join(__dirname, "./views/build", "index.html"));
+});
+
 router.get("/resetpassword", (req, res) => {
   res.sendFile(path.join(__dirname, "./views/build", "index.html"));
 });
